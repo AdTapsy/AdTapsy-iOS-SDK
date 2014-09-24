@@ -1,0 +1,57 @@
+AdTapsy SDK Changelog
+
+v0.3.3
+- Updated AdMob to v6.12.0
+
+v0.3.2
+- Fixed issue with inmobi interstitial hiding when caching new ad
+
+v0.3.1
+- Updated inmobi to v4.5.1
+
+v0.3
+- Fixed issues with rotating ad networks
+- Updated all networks with latest iOS8 sdks
+
+v0.2.6
+- Added AdTapsy delegate for callbacks when ad shown, clicked, skipped or failed to show
+
+v0.2.5
+- Fixed issues with checking when ad is loaded
+
+v0.2.4
+- Fixed Revmob ads loading before started session
+- Prevent endless loops when no ads available
+
+v0.2.3
+- Updated SDK Versions:
+
+ AdColony-2.2.4
+ Appflood-20140312
+ Applovin-2.5.0
+ Chartboost-4.5.1
+ Admob-6.11.1
+ InMobi-4.4.1
+ revmob-7.5.5
+ vungle-3.0.9
+
+v0.2.1
+- More robust networks support
+- Updated integration for new Chartboost SDK 4.5
+- Fixed integration for cocos2d games
+
+v0.2
+- Control ad networks priority via https://app.adtapsy.com/
+- First private beta release
+- Added support for AdColony
+- Removed AppFlood
+
+
+v0.1
+- Added support for AdMob
+- Added support for AppFlood
+- Added support for Applovin
+- Added support for Chartboost
+- Added support for InMobi
+- Added support for RevMob
+- Addes support for Vungle
