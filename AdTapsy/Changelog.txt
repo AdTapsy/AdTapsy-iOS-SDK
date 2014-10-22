@@ -1,5 +1,9 @@
 AdTapsy SDK Changelog
 
+v0.3.4
+- More robust optimization for networks switching and increasing fill rate
+- Enable test mode for AdMob and RevMob via SDK
+
 v0.3.3
 - Updated AdMob to v6.12.0
 

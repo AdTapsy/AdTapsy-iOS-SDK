@@ -83,6 +83,13 @@
  */
 +(NSString*) appId;
 
+/**
+ * Enable test mode for AdMob and RevMob, for other use ad networks dashboards
+ */
++(void) setTestMode: (BOOL) isTestModeEnabled andTestDevices: (NSArray *) testDevices;
+
+-(BOOL) isTestModeEnabled;
+-(NSArray*) testDevices;
 
 +(void) setDelegate: (id<AdTapsyDelegate>) delegate;
 
