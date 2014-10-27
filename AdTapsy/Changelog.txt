@@ -1,5 +1,8 @@
 AdTapsy SDK Changelog
 
+v0.3.5
+- AdColony callback on skip/close ad
+
 v0.3.4
 - More robust optimization for networks switching and increasing fill rate
 - Enable test mode for AdMob and RevMob via SDK
