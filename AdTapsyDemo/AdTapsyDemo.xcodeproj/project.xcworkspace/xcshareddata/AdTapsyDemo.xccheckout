@@ -10,29 +10,29 @@
 	<string>AdTapsyDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>29A6D598-8542-416B-8224-32F1BEFFC265</key>
+		<key>C4AAFE04B929D6C3281DF2A63273518C8C945A09</key>
 		<string>https://github.com/AdTapsy/AdTapsy-iOS-SDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AdTapsyDemo/AdTapsyDemo.xcodeproj/project.xcworkspace</string>
+	<string>AdTapsyDemo/AdTapsyDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>29A6D598-8542-416B-8224-32F1BEFFC265</key>
+		<key>C4AAFE04B929D6C3281DF2A63273518C8C945A09</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/AdTapsy/AdTapsy-iOS-SDK.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>29A6D598-8542-416B-8224-32F1BEFFC265</string>
+	<string>C4AAFE04B929D6C3281DF2A63273518C8C945A09</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>29A6D598-8542-416B-8224-32F1BEFFC265</string>
+			<string>C4AAFE04B929D6C3281DF2A63273518C8C945A09</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AdTapsy-iOS-SDK</string>
 		</dict>
