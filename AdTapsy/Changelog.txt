@@ -1,5 +1,9 @@
 AdTapsy SDK Changelog
 
+v0.3.7
+- Fixed issues with RevMob fill rate
+- Updated Vungle v3.0.11
+
 v0.3.6
 - Minor changes
 

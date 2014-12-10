@@ -6,4 +6,4 @@
  AdMob-6.12.1
  InMobi-4.5.1
  RevMob-8.0.1
- Vungle-3.0.10
+ Vungle-3.0.11
