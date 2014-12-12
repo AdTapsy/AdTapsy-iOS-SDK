@@ -1,7 +1,7 @@
 /*
  * Chartboost.h
  * Chartboost
- * 5.0.2
+ * 5.1.2
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */
@@ -21,7 +21,11 @@ typedef NS_ENUM(NSUInteger, CBFramework) {
     /*! Adobe AIR. */
     CBFrameworkAIR,
     /*! GameSalad. */
-    CBFrameworkGameSalad
+    CBFrameworkGameSalad,
+    /*! Cordova. */
+    CBFrameworkCordova,
+    /*! CocoonJS. */
+    CBFrameworkCocoonJS
 };
 
 /*!
@@ -153,6 +157,16 @@ extern CBLocation const CBLocationDefault;
 + (void)startWithAppId:(NSString*)appId
           appSignature:(NSString*)appSignature
               delegate:(id<ChartboostDelegate>)delegate;
+
+/*!
+ @abstract
+ Check to see if any views are visible
+ 
+ @return YES if there is any view visible
+ 
+ @discussion This method can be used to check if any chartboost ad's are visible on the app.
+ */
++ (BOOL)isAnyViewVisible;
 
 /*!
  @abstract
@@ -821,6 +835,18 @@ extern CBLocation const CBLocationDefault;
 
 /*!
  @abstract
+ Called before a video has been displayed on the screen.
+ 
+ @param location The location for the Chartboost impression type.
+ 
+ @discussion Implement to be notified of when a video will
+ be displayed on the screen for a given CBLocation.  You can then do things like mute
+ effects and sounds.
+ */
+- (void)willDisplayVideo:(CBLocation)location;
+
+/*!
+ @abstract
  Called after the App Store sheet is dismissed, when displaying the embedded app sheet.
  
  @discussion Implement to be notified of when the App Store sheet is dismissed.
@@ -935,6 +961,8 @@ extern CBLocation const CBLocationDefault;
  @deprecated This method has been deprecated and will be removed in a future version.
  */
 - (void)didLoadInPlay __attribute__((deprecated("As of version 4.5, use didCacheInPlay:(CBLocation)location")));
+
+
 
 @end
 

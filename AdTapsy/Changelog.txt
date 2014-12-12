@@ -1,5 +1,11 @@
 AdTapsy SDK Changelog
 
+v0.3.8
+- Updated AdMob 6.12.2
+- Updated Chartboost-5.1.2
+- Updated AdColony-2.4.13
+- Updated RevMob-8.1.0
+
 v0.3.7
 - Fixed issues with RevMob fill rate
 - Updated Vungle v3.0.11
