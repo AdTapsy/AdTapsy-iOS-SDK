@@ -88,6 +88,8 @@
  */
 +(void) setTestMode: (BOOL) isTestModeEnabled andTestDevices: (NSArray *) testDevices;
 
++(void) setEngine: (NSString*) engine;
+
 -(BOOL) isTestModeEnabled;
 -(NSArray*) testDevices;
 

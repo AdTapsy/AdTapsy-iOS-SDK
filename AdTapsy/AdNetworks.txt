@@ -1,9 +1,9 @@
- AdNetworks versions supported by AdTapsy
+AdNetworks versions supported by AdTapsy
  
- Chartboost-5.1.2
- AdColony-2.4.13
- AppLovin-2.5.3
- AdMob-6.12.2
- InMobi-4.5.1
- RevMob-8.1.0
- Vungle-3.0.11
+Chartboost-5.1.3
+AdColony-2.4.13
+AppLovin-2.5.4
+AdMob-6.12.2
+InMobi-4.5.1
+RevMob-8.1.0
+Vungle-3.0.11

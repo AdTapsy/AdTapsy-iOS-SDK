@@ -1,7 +1,7 @@
 /*
  * Chartboost.h
  * Chartboost
- * 5.1.2
+ * 5.1.3
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */
@@ -698,6 +698,17 @@ extern CBLocation const CBLocationDefault;
  */
 - (void)didFailToLoadMoreApps:(CBLocation)location
                     withError:(CBLoadError)error;
+
+#pragma mark - Video Delegate
+
+/*!
+ @abstract
+ Called after videos have been successfully prefetched.
+ 
+ @discussion Implement to be notified of when the prefetching process has finished successfully.
+ */
+
+- (void)didPrefetchVideos;
 
 #pragma mark - Rewarded Video Delegate
 

@@ -1,5 +1,11 @@
 AdTapsy SDK Changelog
 
+v0.4
+- Added engine property for Unity
+- Changed Vungle depracted method with the new one
+- Updated Chartboost-5.1.3
+- Updated AppLovin-2.5.4
+
 v0.3.8
 - Updated AdMob 6.12.2
 - Updated Chartboost-5.1.2

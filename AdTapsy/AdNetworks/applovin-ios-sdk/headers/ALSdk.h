@@ -131,7 +131,7 @@
  * 
  * @return An instance of AppLovinSDK
  */
-+(ALSdk *) sharedWithKey: (NSString *)sdkKey settings: (ALSdkSettings *)settings;
++(ALSdk *) sharedWithKey: (NSString *) sdkKey settings: (ALSdkSettings *)settings;
 
 - (id)init __attribute__((unavailable("Use [ALSdk shared] instead of alloc-init pattern.")));
 

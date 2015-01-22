@@ -69,6 +69,13 @@
  * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
  *
  * You must call preloadAndNotify before calling showOver.
+ */
++(void) show;
+
+/**
+ * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
+ *
+ * You must call preloadAndNotify before calling showOver.
  *
  * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers the the video view is legitimate,
  * as we will confirm whether the specific ad was actually served - then we will ping your server with a url for you to update
@@ -129,6 +136,13 @@
  * @return YES if an ad has been loaded into this incentivized interstitial and is ready to display. NO otherwise.
  */
 @property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay;
+
+/**
+ * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
+ *
+ * You must call preloadAndNotify before calling showOver.
+ */
+-(void) show;
 
 /**
  * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
