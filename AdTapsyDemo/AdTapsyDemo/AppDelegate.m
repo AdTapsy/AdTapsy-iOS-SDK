@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    //[AdTapsy setTestMode:YES andTestDevices:@[ @"Simulator", @"d148bde164f352edec154fd5673380ae" ]]; // Only AdMob and RevMob, for the rest go to ad network dashboard
+    [AdTapsy setTestMode:YES andTestDevices:@[ @"Simulator", @"5745e0e7d8877fe11232e7f6c591f57d" ]]; // Only AdMob and RevMob, for the rest go to ad network dashboard
     [AdTapsy startSession:@"539777bae4b02eacca4bcb67"]; // Set AdTapsy App ID
     return YES;
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Borislav Gizdov on 26.03.14.
 //  Copyright (c) 2014 г. AdTapsy Ltd. All rights reserved.
-//  <info@adtapsy.com>
+//  <support@adtapsy.com>
 //
 
 #import <UIKit/UIKit.h>

@@ -1,5 +1,10 @@
 AdTapsy SDK Changelog
 
+v0.4.1
+- Updated Admob v7.0.0
+- Updated AdColony 2.5.0
+- Updated Vungle 3.0.12
+
 v0.4
 - Added engine property for Unity
 - Changed Vungle depracted method with the new one
