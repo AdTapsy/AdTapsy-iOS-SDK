@@ -19,7 +19,6 @@
 {
     [super viewDidLoad];
     [AdTapsy setDelegate:self];
-    [AdTapsy showInterstitial:self];
 }
 - (IBAction)showAd:(id)sender {
     [AdTapsy showInterstitial:self];

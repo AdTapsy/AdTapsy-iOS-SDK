@@ -1,5 +1,11 @@
 AdTapsy SDK Changelog
 
+v0.4.3
+- Fixed showing ads on startup
+
+v0.4.2
+- Fixed tracking request when all networks disabled
+
 v0.4.1
 - Updated Admob v7.0.0
 - Updated AdColony 2.5.0
