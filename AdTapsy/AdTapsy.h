@@ -36,6 +36,12 @@
  */
 - (void) adtapsyDidSkippedAd;
 
+
+/**
+ * Called when at least one ad is loaded and ready to show
+ */
+- (void) adtapsyDidCachedAd;
+
 @end
 
 /**
@@ -90,8 +96,15 @@
 
 +(void) setEngine: (NSString*) engine;
 
++(NSString*) engine;
+
 -(BOOL) isTestModeEnabled;
 -(NSArray*) testDevices;
+
+/**
+ * Check if any ads cached and ready to show
+ */
++(BOOL) isAdReadyToShow;
 
 +(void) setDelegate: (id<AdTapsyDelegate>) delegate;
 

@@ -161,4 +161,10 @@
  * @param muted Whether the ad was muted or unmuted.
  */
 -(void)onAdColonyNativeAd:(AdColonyNativeAdView*)ad muted:(BOOL)muted;
+
+/**
+ * Notifies your app that a user has engaged with the native ad via an in-video engagement mechanism.
+ * @param ad The affected native ad view.
+ */
+-(void)onAdColonyNativeAdEngagementPressed:(AdColonyNativeAdView*)ad;
 @end

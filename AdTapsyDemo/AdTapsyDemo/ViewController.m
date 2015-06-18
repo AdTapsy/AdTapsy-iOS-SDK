@@ -20,8 +20,14 @@
     [super viewDidLoad];
     [AdTapsy setDelegate:self];
 }
+
 - (IBAction)showAd:(id)sender {
-    [AdTapsy showInterstitial:self];
+    if ([AdTapsy isAdReadyToShow]) {
+        NSLog(@"Ad is ready be shown");
+        [AdTapsy showInterstitial:self];
+    } else {
+        NSLog(@"Ad is not ready to be shown");
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,5 +52,10 @@
 -(void)adtapsyDidSkippedAd {
     NSLog(@"***adtapsyDidSkippedAd***");
 }
+
+-(void)adtapsyDidCachedAd {
+    NSLog(@"***adtapsyDidCachedAd***");
+}
+
 
 @end

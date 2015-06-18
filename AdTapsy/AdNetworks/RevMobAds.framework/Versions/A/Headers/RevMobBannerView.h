@@ -53,5 +53,20 @@ typedef void (^RevMobBannerViewOnclickHandler)(RevMobBannerView *banner);
             andLoadFailHandler:(RevMobBannerViewFailureHandler)onAdFailedHandler
                 onClickHandler:(RevMobBannerViewOnclickHandler)onClickHandler;
 
+/*
+    Use these methods to show the banner. You can specify a position or even another view where it will be added.
+*/
+ 
+- (void)showAd;
+- (void)showAd:(CGFloat)x y:(CGFloat)y width:(CGFloat)w height:(CGFloat)h view:(UIView*)v;
+
+/*
+    Adds the banner to the rootViewController's view
+*/
+
+- (void)showAd:(CGFloat)x y:(CGFloat)y width:(CGFloat)w height:(CGFloat)h;
+
+
+
 @end
 

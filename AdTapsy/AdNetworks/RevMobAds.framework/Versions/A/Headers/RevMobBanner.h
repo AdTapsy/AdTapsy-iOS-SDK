@@ -81,5 +81,7 @@ typedef void (^RevMobBannerOnClickHandler)(RevMobBanner *banner);
  */
 - (void)hideAd;
 
+
+
 @end
 

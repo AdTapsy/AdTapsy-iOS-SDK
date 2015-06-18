@@ -135,27 +135,6 @@ typedef enum {
 @property (nonatomic, strong) NSString *userPage;
 
 
-/**
- This method is used to set user location in order to get targeted ads with higher eCPM.
- You should pass double values for the user latitude, longitude and accuracy.
- 
- Example of usage:
- 
- RevMobAds *revmob = [RevMobAds session];
- 
- CLLocation *location = self.locationManager.location;
- 
- [self.locationManager setDistanceFilter: kCLDistanceFilterNone];
- [self.locationManager setDesiredAccuracy: kCLLocationAccuracyHundredMeters];
- [self.locationManager startUpdatingLocation];
- 
- [revmob setUserLatitude: location.coordinate.latitude
- userLongitude: location.coordinate.longitude
- userAccuracy: location.horizontalAccuracy];
-
-// */
-- (void)setUserLatitude:(double)userLatitude userLongitude: (double)userLongitude userAccuracy: (double)userAccuracy;
-
 #pragma mark - Alternative use
 
 /**
@@ -231,6 +210,12 @@ typedef enum {
 + (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
                   withSuccessHandler:(void(^)())onSessionStartedHandler
                       andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler;
+
++ (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
+                  withSuccessHandler:(void(^)())onSessionStartedHandler
+                      andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler
+                                 url:(NSString *) serverUrl
+                                 key:(int) sessionKey;
 
 
 /**

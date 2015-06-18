@@ -1,5 +1,16 @@
 AdTapsy SDK Changelog
 
+v0.5
+- Added ad ready/cached delegate callback and check
+- Improved ad caching from ad networks
+- Improved speed of showing ads without delays
+- Updated Admob v7.3.1
+- Updated AdColony v2.5.1
+- Updated Chartboost v5.4.0
+- Updated InMobi v4.5.3
+- Updated RevMob v9.0.1
+- Updated Vungle v3.0.13
+
 v0.4.3
 - Fixed showing ads on startup
 
