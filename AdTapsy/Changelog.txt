@@ -1,5 +1,8 @@
 AdTapsy SDK Changelog
 
+v0.5.1
+- Removed Vungle sdk from the bundle
+
 v0.5
 - Added ad ready/cached delegate callback and check
 - Improved ad caching from ad networks
