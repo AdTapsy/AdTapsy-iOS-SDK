@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <GoogleMobileAds/GoogleMobileAdsDefines.h>
+
 @protocol GADCustomEventInterstitial;
 
 /// Call back to this delegate in your custom event. You must call
@@ -49,6 +51,6 @@
 #pragma mark Deprecated
 - (void)customEventInterstitial:(id<GADCustomEventInterstitial>)customEvent
                    didReceiveAd:(NSObject *)ad
-    __attribute__((deprecated("Use customEventInterstitialDidReceiveAd:.")));
+    GAD_DEPRECATED_MSG_ATTRIBUTE("Use customEventInterstitialDidReceiveAd:.");
 
 @end

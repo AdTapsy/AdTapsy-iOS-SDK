@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AdTapsy.h"
 
-@interface ViewController : UIViewController<AdTapsyDelegate>
+@interface ViewController : UIViewController<AdTapsyDelegate> {
+    int totalCoins;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *coinsLabel;
 
 @end

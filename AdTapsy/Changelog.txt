@@ -1,5 +1,14 @@
 AdTapsy SDK Changelog
 
+v1.0
+- Added support for rewarded videos for AdColony, Chartboost, Applovin and AdMob
+- Updated Chartboost-5.5.3
+- Updated AdColony-2.6.0
+- Updated AppLovin-3.1.3
+- Updated AdMob-7.5.0
+- Updated RevMob-9.0.4
+- Updated Vungle-3.2.0
+
 v0.5.1
 - Removed Vungle sdk from the bundle
 

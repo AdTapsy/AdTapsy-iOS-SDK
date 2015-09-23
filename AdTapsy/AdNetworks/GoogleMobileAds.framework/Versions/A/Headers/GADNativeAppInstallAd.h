@@ -8,15 +8,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "../GADAdLoaderDelegate.h"
-#import "GADNativeAd.h"
-#import "GADNativeAdImage.h"
+#import <GoogleMobileAds/GADAdLoaderDelegate.h>
+#import <GoogleMobileAds/GADNativeAd.h>
+#import <GoogleMobileAds/GADNativeAdImage.h>
+#import <GoogleMobileAds/GoogleMobileAdsDefines.h>
 
-// For use with GADAdLoader's creation methods. If you request this ad type, your delegate must
-// conform to the GADNativeAppInstallAdRequestDelegate protocol.
-//
-// See GADNativeAdImageAdLoaderOptions.h for ad loader image options.
-extern NSString *const kGADAdLoaderAdTypeNativeAppInstall;
+/// For use with GADAdLoader's creation methods. If you request this ad type, your delegate must
+/// conform to the GADNativeAppInstallAdRequestDelegate protocol.
+///
+/// See GADNativeAdImageAdLoaderOptions.h for ad loader image options.
+GAD_EXTERN NSString *const kGADAdLoaderAdTypeNativeAppInstall;
 
 /// Native app install ad.
 @interface GADNativeAppInstallAd : GADNativeAd
@@ -42,7 +43,6 @@ extern NSString *const kGADAdLoaderAdTypeNativeAppInstall;
 @property(nonatomic, readonly, strong) NSArray *images;
 /// App store rating (0 to 5).
 @property(nonatomic, readonly, copy) NSDecimalNumber *starRating;
-
 @end
 
 #pragma mark - Protocol and constants

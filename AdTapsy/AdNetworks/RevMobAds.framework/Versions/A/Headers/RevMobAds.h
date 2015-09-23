@@ -564,6 +564,8 @@ typedef enum {
 */
 - (RevMobPopup *)popup;
 
+- (void) openLink;
+
 /**
  This is the factory of popup ad object
 

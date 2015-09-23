@@ -17,30 +17,62 @@
 
 @optional
 /**
- * Called when ad shown successfuly
+ * Called when Interstitial ad shown successfuly
  */
-- (void) adtapsyDidShowAd;
+- (void) adtapsyDidShowInterstitialAd;
 
 /**
- * Called when ad failed to show. All used ad networks has no fill.
+ * Called when Interstitial ad failed to show. All used ad networks has no fill.
  */
-- (void) adtapsyDidFailedToShowAd;
+- (void) adtapsyDidFailedToShowInterstitialAd;
 
 /**
- * Called when user clicked on ad
+ * Called when user clicked on Interstitial ad
  */
-- (void) adtapsyDidClickedAd;
+- (void) adtapsyDidClickedInterstitialAd;
 
 /**
- * Called when user skipped ad (clicked X button to close)
+ * Called when user skipped Interstitial ad (clicked X button to close)
  */
-- (void) adtapsyDidSkippedAd;
+- (void) adtapsyDidSkippedInterstitialAd;
 
 
 /**
- * Called when at least one ad is loaded and ready to show
+ * Called when at least one Interstitial ad is loaded and ready to show
  */
-- (void) adtapsyDidCachedAd;
+- (void) adtapsyDidCachedInterstitialAd;
+
+
+/**
+ * Called when rewarded video ad shown successfuly
+ */
+- (void) adtapsyDidShowRewardedVideoAd;
+
+/**
+ * Called when rewarded video ad failed to show. All used ad networks has no fill.
+ */
+- (void) adtapsyDidFailedToShowRewardedVideoAd;
+
+/**
+ * Called when user clicked on rewarded video ad
+ */
+- (void) adtapsyDidClickedRewardedVideoAd;
+
+/**
+ * Called when user skipped rewarded video ad (clicked X button to close)
+ */
+- (void) adtapsyDidSkippedRewardedVideoAd;
+
+
+/**
+ * Called when at least one rewarded video ad is loaded and ready to show
+ */
+- (void) adtapsyDidCachedRewardedVideoAd;
+
+/**
+ * Called when user earned reward for video view
+ */
+-(void) adtapsyDidEarnedReward:(BOOL) success andAmount:(int) amount;
 
 @end
 
@@ -60,7 +92,22 @@
 +(void) showInterstitial: (UIViewController*) viewController;
 
 /**
- * Destroy call this method on applicationWillTerminate in app delegate
+ * Use showRewardedVideo method in places in the app where you want to show rewarded video ad
+ */
++(void) showRewardedVideo: (UIViewController*) viewController;
+
+/**
+ * Check if any ads cached and ready to show
+ */
++(BOOL) isInterstitialReadyToShow;
+
+/**
+ * Check if any ads cached and ready to show
+ */
++(BOOL) isRewardedVideoReadyToShow;
+
+/**
+ * Call this method on applicationWillTerminate in app delegate
  */
 +(void) destroy;
 
@@ -72,7 +119,7 @@
 /**
  * Swtich to next network by priority. You don't need to call this it is automatically
  */
-+(void) next;
++(void) next:(NSString*) zone;
 
 /**
  * Returns AdTapsy singleton instance
@@ -82,7 +129,7 @@
 /**
  * Check if any ads loaded
  */
--(BOOL) hasLoadedAd;
+-(BOOL) hasLoadedAd: (NSString*) adtapsyZone;
 
 /**
  * Returns used AdTapsy App ID
@@ -94,20 +141,47 @@
  */
 +(void) setTestMode: (BOOL) isTestModeEnabled andTestDevices: (NSArray *) testDevices;
 
+/**
+ * Set amount of virtual currency when rewarded video is watched
+ */
++(void) setRewardedVideoAmount: (int) amount;
+
+/**
+ * Get rewarded video amount
+ */
++(int) rewardedVideoAmount;
+
 +(void) setEngine: (NSString*) engine;
 
 +(NSString*) engine;
 
+/**
+ * Call this method before AdTapsy initialization if you are using server side callbacks for rewarded videos
+ */
++(void) setUserIdentifier: (NSString*) userId;
+
++(NSString*) userIdentifier;
+
 -(BOOL) isTestModeEnabled;
 -(NSArray*) testDevices;
+-(NSString*) showRequestZone;
 
-/**
- * Check if any ads cached and ready to show
- */
-+(BOOL) isAdReadyToShow;
 
 +(void) setDelegate: (id<AdTapsyDelegate>) delegate;
 
- @property (nonatomic, assign) id <AdTapsyDelegate> delegate;
+@property (nonatomic, assign) id <AdTapsyDelegate> delegate;
+
+/**
+ * Show popup before show rewarded video. For most ad networks this should be set in their dashboard
+ */
++(void) setRewardedVideoPrePopupEnabled: (BOOL) isEnabled;
+@property (nonatomic, assign) BOOL rewardedVideoPrePopupEnabled;
+
+/**
+ * Show popup after show rewarded video. For most ad networks this should be set in their dashboard
+ */
++(void) setRewardedVideoPostPopupEnabled: (BOOL) isEnabled;
+@property (nonatomic, assign) BOOL rewardedVideoPostPopupEnabled;
+
 
 @end

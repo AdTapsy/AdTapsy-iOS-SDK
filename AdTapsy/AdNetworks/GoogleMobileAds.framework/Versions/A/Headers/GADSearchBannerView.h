@@ -5,7 +5,7 @@
 //  Copyright 2011 Google Inc. All rights reserved.
 //
 
-#import "../GADBannerView.h"
+#import <GoogleMobileAds/GADBannerView.h>
 
 // A view that displays search ads.
 // To show search ads:

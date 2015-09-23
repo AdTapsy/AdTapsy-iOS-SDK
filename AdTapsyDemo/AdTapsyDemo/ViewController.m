@@ -18,13 +18,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    
     [AdTapsy setDelegate:self];
+    [AdTapsy setRewardedVideoAmount:10];
+    [AdTapsy setRewardedVideoPrePopupEnabled:YES];
+    [AdTapsy setRewardedVideoPostPopupEnabled:YES];
+    totalCoins = 0;
 }
 
 - (IBAction)showAd:(id)sender {
-    if ([AdTapsy isAdReadyToShow]) {
+    if ([AdTapsy isInterstitialReadyToShow]) {
         NSLog(@"Ad is ready be shown");
         [AdTapsy showInterstitial:self];
+    } else {
+        NSLog(@"Ad is not ready to be shown");
+    }
+}
+
+- (IBAction)showRewardedVideo:(id)sender {
+    if ([AdTapsy isRewardedVideoReadyToShow]) {
+        NSLog(@"Ad is ready be shown");
+        [AdTapsy showRewardedVideo:self];
     } else {
         NSLog(@"Ad is not ready to be shown");
     }
@@ -37,24 +52,51 @@
 }
 
 
--(void)adtapsyDidClickedAd {
-    NSLog(@"***adtapsyDidClickedAd***");
+-(void)adtapsyDidCachedInterstitialAd {
+    NSLog(@"***adtapsyDidCachedInterstitialAd***");
 }
 
--(void)adtapsyDidFailedToShowAd {
-    NSLog(@"***adtapsyDidFailedToShowAd***");
+-(void)adtapsyDidCachedRewardedVideoAd {
+    NSLog(@"***adtapsyDidCachedRewardedVideoAd***");
 }
 
--(void)adtapsyDidShowAd {
-    NSLog(@"***adtapsyDidShowAd***");
+-(void)adtapsyDidClickedInterstitialAd {
+    NSLog(@"***adtapsyDidClickedInterstitialAd***");
 }
 
--(void)adtapsyDidSkippedAd {
-    NSLog(@"***adtapsyDidSkippedAd***");
+-(void)adtapsyDidClickedRewardedVideoAd {
+    NSLog(@"***adtapsyDidClickedRewardedVideoAd***");
 }
 
--(void)adtapsyDidCachedAd {
-    NSLog(@"***adtapsyDidCachedAd***");
+-(void)adtapsyDidFailedToShowInterstitialAd {
+    NSLog(@"***adtapsyDidFailedToShowInterstitialAd***");
+}
+
+-(void)adtapsyDidFailedToShowRewardedVideoAd {
+    NSLog(@"***adtapsyDidFailedToShowRewardedVideoAd***");
+}
+
+-(void)adtapsyDidShowInterstitialAd {
+    NSLog(@"***adtapsyDidShowInterstitialAd***");
+}
+
+-(void)adtapsyDidShowRewardedVideoAd {
+    NSLog(@"***adtapsyDidShowRewardedVideoAd***");
+}
+
+-(void)adtapsyDidSkippedInterstitialAd {
+    NSLog(@"***adtapsyDidSkippedInterstitialAd***");
+}
+
+-(void)adtapsyDidSkippedRewardedVideoAd {
+    NSLog(@"***adtapsyDidSkippedRewardedVideoAd***");
+}
+
+
+-(void)adtapsyDidEarnedReward:(BOOL)success andAmount:(int)amount {
+    NSLog(@"***adtapsyDidEarnedReward*** success: %d amount %d", success, amount);
+    totalCoins = totalCoins + amount;
+    [_coinsLabel setText:[NSString stringWithFormat:@"Coins: %d", totalCoins]];
 }
 
 

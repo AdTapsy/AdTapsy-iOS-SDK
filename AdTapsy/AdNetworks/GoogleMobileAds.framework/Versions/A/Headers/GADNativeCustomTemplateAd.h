@@ -8,13 +8,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "../GADAdLoaderDelegate.h"
-#import "GADNativeAd.h"
-#import "GADNativeAdImage.h"
+#import <GoogleMobileAds/GADAdLoaderDelegate.h>
+#import <GoogleMobileAds/GADNativeAd.h>
+#import <GoogleMobileAds/GADNativeAdImage.h>
+#import <GoogleMobileAds/GoogleMobileAdsDefines.h>
 
-// For use with GADAdLoader's creation methods. If you request this ad type, your delegate must
-// conform to the GADNativeCustomTemplateAdLoaderDelegate protocol.
-extern NSString *const kGADAdLoaderAdTypeNativeCustomTemplate;
+/// For use with GADAdLoader's creation methods. If you request this ad type, your delegate must
+/// conform to the GADNativeCustomTemplateAdLoaderDelegate protocol.
+GAD_EXTERN NSString *const kGADAdLoaderAdTypeNativeCustomTemplate;
 
 /// Native custom template ad.
 @interface GADNativeCustomTemplateAd : GADNativeAd

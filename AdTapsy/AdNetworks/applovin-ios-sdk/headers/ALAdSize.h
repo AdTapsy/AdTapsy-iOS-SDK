@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ALNullabilityAnnotations.h"
 
 /*
  * @author Basil Shikin, Matt Szaro
@@ -26,7 +27,7 @@
 /**
  *  An <code>NSString</code> label which describes this ad size.
  */
-@property (strong, nonatomic, readonly) NSString * label;
+@property (copy, nonatomic, readonly) NSString* __alnonnull label;
 
 /**
  * @name Supported Ad Size Singletons
@@ -39,7 +40,7 @@
  *
  *  @return An instance of ALAdSize which represents the size <code>BANNER</code>.
  */
-+(ALAdSize *) sizeBanner;
++(alnonnull ALAdSize *) sizeBanner __deprecated_msg("Banners and MRecs are deprecated and will be removed in a future SDK version.");
 
 /**
  *  Retrieve a singleton instance of the <code>INTERSTITIAL</code> ad size object.
@@ -48,7 +49,7 @@
  *
  *  @return An instance of ALAdSize which represents the size <code>INTERSTITIAL</code>.
  */
-+(ALAdSize *) sizeInterstitial;
++(alnonnull ALAdSize *) sizeInterstitial;
 
 /**
  *  Retrieve a singleton instance of the <code>MREC</code> ad size object.
@@ -57,7 +58,7 @@
  *
  *  @return An instance of ALAdSize which represents the size <code>MREC</code>.
  */
-+(ALAdSize *) sizeMRec;
++(alnonnull ALAdSize *) sizeMRec __deprecated_msg("Banners and MRecs are deprecated and will be removed in a future SDK version.");
 
 /**
  *  Retrieve a singleton instance of the <code>LEADER</code> ad size object.
@@ -66,39 +67,22 @@
  *
  *  @return An instance of ALAdSize which represents the size <code>LEADER</code>.
  */
-+(ALAdSize *) sizeLeader;
++(alnonnull ALAdSize *) sizeLeader __deprecated_msg("Leaderboards are deprecated and will be removed in a future SDK version.");
 
 /**
  *  Retrieve an <code>NSArray</code> of all available ad size singleton instances.
  *
  *  @return [NSArray arrayWithObjects: [ALAdSize sizeBanner], [ALAdSize sizeInterstitial], ..., nil];
  */
-+(NSArray *) allSizes;
-
-/**
- * @name Obtaining Instances from Strings
- */
-
-/**
- *  Get a reference to the appropriate singleton based on a string. If no matching size exists, fall back to a default size.
- *
- *  @param label       A string representing the size you wish to retrieve. For example, <code>@"BANNER"</code>.
- *  @param defaultSize A singleton instance of ALAdSize to use in case the provided string does not correspond to a valid size. For example, [ALAdSize sizeBanner].
- *
- *  @return An instance of ALAdSize which matches the provided string, if available. If the provided string is not a valid ad size, then the <code>defaultSize</code> will be returned.
- */
-+(ALAdSize*) sizeWithLabel: (NSString*) label orDefault: (ALAdSize*) defaultSize;
++(alnonnull NSArray *) allSizes;
 
 // ----------------------------------------------------
 
 // These are no longer recommended or considered best practice.
 // If possible, use a size like [ALAdSize sizeBanner] or [ALAdSize sizeInterstitial] instead.
+@property (assign, nonatomic) NSUInteger width __deprecated;
+@property (assign, nonatomic) NSUInteger height __deprecated;
 
-@property (assign, nonatomic) NSUInteger width;
-@property (assign, nonatomic) NSUInteger height;
-
--(instancetype) initWithLabel: (NSString *)label;
--(instancetype) initWithWidth: (NSUInteger)width height:(NSUInteger)height;
-
-- (id)init __attribute__((unavailable("Use sizeWithLabel:orDefault: instead.")));
++(alnonnull ALAdSize*) sizeWithLabel: (alnonnull NSString*) label orDefault: (alnonnull ALAdSize*) defaultSize __deprecated_msg("Custom ad sizes are no longer supported; use an existing singleton size like [ALAdSize sizeBanner]");
+- (alnullable id)init __attribute__((unavailable("Do not alloc-init your own instances; use an existing singleton size like [ALAdSize sizeBanner]")));
 @end
