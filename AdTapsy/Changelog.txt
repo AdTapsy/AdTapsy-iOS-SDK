@@ -1,5 +1,11 @@
 AdTapsy SDK Changelog
 
+v1.0.1
+- Fixed warnings in XCode 7
+- Updated AdMob v7.5.1
+- Updated Chartboost v6.0.0
+- Updated Applovin v3.1.5
+
 v1.0
 - Added support for rewarded videos for AdColony, Chartboost, Applovin and AdMob
 - Updated Chartboost-5.5.3
