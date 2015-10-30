@@ -153,7 +153,7 @@
 
 +(void) setEngine: (NSString*) engine;
 
-+(NSString*) engine;
+-(NSString*) engine;
 
 /**
  * Call this method before AdTapsy initialization if you are using server side callbacks for rewarded videos
