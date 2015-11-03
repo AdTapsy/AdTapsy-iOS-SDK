@@ -1,4 +1,7 @@
 AdTapsy SDK Changelog
+v1.1.1
+- Fixed build warnings in XCode 7
+
 v1.1
 - Added rewarded video support for InMobi
 - Updated InMobi v5.0.1
