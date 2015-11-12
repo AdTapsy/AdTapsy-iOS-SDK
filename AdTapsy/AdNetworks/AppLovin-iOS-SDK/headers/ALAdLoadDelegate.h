@@ -23,8 +23,8 @@
  *
  * This method is invoked on the main UI thread.
  *
- * @param adService AdService which loaded the ad. Will not return nil.
- * @param ad        Ad that was loaded. Will not return nil.
+ * @param adService AdService which loaded the ad. Will not be nil.
+ * @param ad        Ad that was loaded. Will not be nil.
  */
 -(void) adService: (alnonnull ALAdService *) adService didLoadAd: (alnonnull ALAd *) ad;
 
@@ -33,7 +33,7 @@
  *
  * This method is invoked on the main UI thread.
  *
- * @param adService AdService which failed to load an ad. Will not return nil.
+ * @param adService AdService which failed to load an ad. Will not be nil.
  * @param code      An error code corresponding with a constant defined in <code>ALErrorCodes.h</code>.
  */
 -(void) adService: (alnonnull ALAdService *) adService didFailToLoadAdWithError: (int) code;

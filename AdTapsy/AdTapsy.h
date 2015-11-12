@@ -165,6 +165,7 @@
 -(BOOL) isTestModeEnabled;
 -(NSArray*) testDevices;
 -(NSString*) showRequestZone;
+-(BOOL) isForChildren;
 
 
 +(void) setDelegate: (id<AdTapsyDelegate>) delegate;

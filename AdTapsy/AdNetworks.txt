@@ -2,7 +2,7 @@ AdNetworks versions supported by AdTapsy SDK
 
 Chartboost v6.0.1
 AdColony v2.6.0
-AppLovin v3.1.5
+AppLovin v3.1.6
 AdMob v7.5.2
 InMobi v5.0.2
 RevMob v9.0.4

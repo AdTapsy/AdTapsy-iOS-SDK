@@ -1,4 +1,9 @@
 AdTapsy SDK Changelog
+v1.2
+- Added rewarded video support for Vungle
+- Updated Applovin v3.1.6
+- Added COPPA support
+
 v1.1.1
 - Fixed build warnings in XCode 7
 
