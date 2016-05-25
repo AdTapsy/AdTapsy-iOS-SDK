@@ -1,5 +1,5 @@
 //
-//  ALNullabilityAnnotations.h
+//  ALAnnotations.h
 //  sdk
 //
 //  Created by Matt Szaro on 4/14/15.
@@ -29,6 +29,12 @@
     #define alnonnull
     #define __alnullable
     #define __alnonnull
+#endif
+
+#if __has_feature(attribute_availability_tvos)
+    #define __AL_TVOS_PROHIBITED __OS_AVAILABILITY(tvos,unavailable)
+#else
+    #define __AL_TVOS_PROHIBITED
 #endif
 
 #endif
