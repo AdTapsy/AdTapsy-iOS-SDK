@@ -1,7 +1,7 @@
 /*
  * CBMoreAppsButton.h
  * Chartboost
- * 6.4.4
+ * 6.6.0
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */

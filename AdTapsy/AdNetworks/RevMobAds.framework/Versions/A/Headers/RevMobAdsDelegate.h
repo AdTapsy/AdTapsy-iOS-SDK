@@ -6,116 +6,245 @@
 
 @optional
 
-# pragma mark Ad Callbacks (Fullscreen, Banner and Popup)
+# pragma mark Publisher Callbacks
 
 /**
  Fired when session is started.
  */
-- (void)revmobSessionIsStarted;
+- (void)revmobSessionDidStart;
 
 /**
  Fired when session fails to start.
- */
-- (void)revmobSessionNotStartedWithError:(NSError *)error;
-
-
-
-/******** Ad Callbacks *******/
-/**
- Fired by Fullscreen, banner and popup. Called when the communication with the server is finished with success.
- */
-- (void)revmobAdDidReceive;
-
-/**
- Fired by Fullscreen, banner and popup. Called when the communication with the server is finished with error.
- 
  @param error: contains error information.
  */
-- (void)revmobAdDidFailWithError:(NSError *)error;
+- (void)revmobSessionDidNotStartWithError:(NSError *)error;
+
+
+
+/******** Ad Delegates *******/
+
+
+
+/** Native **/
 
 /**
- Fired by Fullscreen, banner and popup. Called when the Ad is displayed in the screen.
+ Called when it's sucessfully loaded and ready to be shown.
  */
-- (void)revmobAdDisplayed;
+- (void)revmobNativeDidReceive:(NSString *)placementId;
+
 
 /**
- Fired by Fullscreen, banner, button and popup.
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
  */
-- (void)revmobUserClickedInTheAd;
+- (void)revmobNativeDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
 
 /**
- Fired by Fullscreen and popup.
+ Called when the Native is clicked
  */
-- (void)revmobUserClosedTheAd;
+- (void)revmobUserDidClickOnNative:(NSString *)placementId;
 
 
 
-/******** Video Callbacks *******/
-/**
- Fired when video is received.
- */
-- (void)revmobVideoDidLoad;
+
+
+/** Banner **/
 
 /**
- Fired when the video is not completely loaded or not even loading.
+Called when it's sucessfully loaded and ready to be shown.
  */
-- (void)revmobVideoNotCompletelyLoaded;
+- (void)revmobBannerDidReceive:(NSString *)placementId;
+
 
 /**
- Fired when the video starts.
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
  */
-- (void)revmobVideoDidStart;
+- (void)revmobBannerDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
 
 /**
- Fired when the video finished.
+Called when the Ad is displayed in the screen.
  */
-- (void)revmobVideoDidFinish;
+- (void)revmobBannerDidDisplay:(NSString *)placementId;
 
-
-
-/******** Rewarded Video Callbacks *******/
-/**
- Fired when rewarded video is loaded.
- */
-- (void)revmobRewardedVideoDidLoad;
 
 /**
- Fired when the rewarded video is not completely loaded or not even loading.
+ Called when the Banner is clicked
  */
-- (void)revmobRewardedVideoNotCompletelyLoaded;
+- (void)revmobUserDidClickOnBanner:(NSString *)placementId;
+
+
+
+
+
+/** Fullscreen **/
 
 /**
- Fired when the rewarded video starts.
+ Called when it's sucessfully loaded and ready to be shown.
  */
-- (void)revmobRewardedVideoDidStart;
+- (void)revmobFullscreenDidReceive:(NSString *)placementId;
+
 
 /**
- Fired when the rewarded video finished.
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
  */
-- (void)revmobRewardedVideoDidFinish;
+- (void)revmobFullscreenDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
 
 /**
- Called if user the rewarded video completed.
+ Called when the Ad is displayed in the screen.
  */
-- (void)revmobRewardedVideoComplete;
+- (void)revmobFullscreenDidDisplay:(NSString *)placementId;
+
 
 /**
- Called when the Rewarded Video Pre-Roll is displayed.
+ Called when the Fullscreen is clicked
  */
-- (void)revmobRewardedPreRollDisplayed;
+- (void)revmobUserDidClickOnFullscreen:(NSString *)placementId;
 
-
-# pragma mark Advertiser Callbacks
 
 /**
- Called if install is successfully registered
+ Called when the Fullscreen is dismissed
  */
-- (void)installDidReceive;
+- (void)revmobUserDidCloseFullscreen:(NSString *)placementId;
+
+
+
+
+
+
+/** Video **/
 
 /**
- Called if install couldn't be registered
+ Fired when the Video is received.
  */
-- (void)installDidFail;
+- (void)revmobVideoDidLoad:(NSString *)placementId;
+
+
+/**
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
+ */
+- (void)revmobVideoDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
+
+/**
+ Fired when the Video is not completely loaded or not even loading.
+ */
+- (void)revmobVideoNotCompletelyLoaded:(NSString *)placementId;
+
+
+/**
+ Fired when the Video starts.
+ */
+- (void)revmobVideoDidStart:(NSString *)placementId;
+
+
+/**
+ Fired when the Video finished.
+ */
+- (void)revmobVideoDidFinish:(NSString *)placementId;
+
+
+/**
+ Called when the Video is clicked
+ */
+- (void)revmobUserDidClickOnVideo:(NSString *)placementId;
+
+
+/**
+ Called when the Video is dismissed
+ */
+- (void)revmobUserDidCloseVideo:(NSString *)placementId;
+
+
+
+
+
+/** Rewarded Video **/
+
+/**
+ Fired when the Rewarded Video is loaded.
+ */
+- (void)revmobRewardedVideoDidLoad:(NSString *)placementId;
+
+
+/**
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
+ */
+- (void)revmobRewardedVideoDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
+
+/**
+ Fired when the Rewarded Video is not completely loaded or not even loading.
+ */
+- (void)revmobRewardedVideoNotCompletelyLoaded:(NSString *)placementId;
+
+
+/**
+ Fired when the Rewarded Video starts.
+ */
+- (void)revmobRewardedVideoDidStart:(NSString *)placementId;
+
+
+/**
+ Called when the whole Rewarded Video process is completed and the reward can be given.
+ */
+- (void)revmobRewardedVideoDidComplete:(NSString *)placementId;
+
+
+/**
+ Called when the RevMob Rewarded Video Pre-Roll is displayed.
+ */
+- (void)revmobRewardedPreRollDidDisplay:(NSString *)placementId;
+
+
+/**
+ Called when the Rewarded Video is dismissed
+ */
+- (void)revmobUserDidCloseRewardedVideo:(NSString *)placementId;
+
+
+
+
+
+/** Pop Up **/
+
+/**
+ Called when it's sucessfully loaded and ready to be shown.
+ */
+- (void)revmobPopUpDidReceive:(NSString *)placementId;
+
+
+/**
+ Called when the communication with the server is finished with error.
+ @param error: contains error information.
+ */
+- (void)revmobPopUpDidFailWithError:(NSError *)error onPlacement:(NSString *)placementId;
+
+
+/**
+ Called when the Ad is displayed in the screen.
+ */
+- (void)revmobPopUpDidDisplay:(NSString *)placementId;
+
+
+/**
+ Called when the Fullscreen is clicked
+ */
+- (void)revmobUserDidClickOnPopUp:(NSString *)placementId;
+
+
+/**
+ Called when the Fullscreen is dismissed
+ */
+- (void)revmobUserDidClosePopUp:(NSString *)placementId;
+
+
 
 
 @end

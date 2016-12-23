@@ -80,7 +80,10 @@ typedef enum {
 @property (nonatomic, assign) RevMobUserGender userGender;
 
 /**
- This property is used to set the minumum of user age range in order to get targeted ads with higher eCPM.
+ This property is used to determine if the user is 13 or less years old, in which case no identifier will be collected,
+ in compliance with the Children's Online Privacy Protection Act.
+ 
+ If the user is older than 13, this information will be used to get targeted ads leading to higher eCPM.
  You should set also set userAgeRangeMax or alternatively set userBirthday.
  
  Example of usage:
@@ -91,7 +94,10 @@ typedef enum {
 @property (nonatomic, assign) NSUInteger userAgeRangeMin;
 
 /**
- This property is used to set the maximum of user age range in order to get targeted ads with higher eCPM.
+ This property is used to determine if the user is 13 or less years old, in which case no identifier will be collected,
+ in compliance with the Children's Online Privacy Protection Act.
+ 
+ If the user is older than 13, this information will be used to get targeted ads leading to higher eCPM.
  You should set also set userAgeRangeMin or alternatively set userBirthday.
 
  Example of usage:
@@ -207,6 +213,7 @@ typedef enum {
  @param onSessionNotStartedHandler: A block that will be executed once the session failed to start, can be nil.
  
  */
+
 + (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
                   withSuccessHandler:(void(^)())onSessionStartedHandler
                       andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler;
@@ -216,6 +223,11 @@ typedef enum {
                       andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler
                                  url:(NSString *) serverUrl
                                  key:(int) sessionKey;
+
++ (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
+                         withSdkName:(NSString *)sdkName
+                  withSuccessHandler:(void(^)()) onSessionStartedHandler
+                      andFailHandler:(void(^)(NSError *error)) onSessionNotStartedHandler;
 
 
 /**
@@ -259,6 +271,17 @@ typedef enum {
  @see showBanner
  */
 - (void)hideBanner;
+
+/**
+ Release the banner that is displayed.
+ 
+ Example of usage:
+ [[RevMobAds session] releaseBanner];
+ 
+ @see releaseBanner
+ */
+
+-(void)releaseBanner;
 
 /**
  Show popup.

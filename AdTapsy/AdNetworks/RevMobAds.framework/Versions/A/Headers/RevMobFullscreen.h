@@ -80,6 +80,71 @@
                  onClickHandler:(void(^)())onClickHandler
                  onCloseHandler:(void(^)())onCloseHandler;
 
+
+/**
+ Use this method to load the ad.
+ 
+ 
+ Example of usage:
+ 
+ [video loadWithSuccessHandler:^(RevMobFullscreen *video) {
+ [video showAd];
+ NSLog(@"Ad loaded");
+ } andLoadFailHandler:^(RevMobFullscreen *video, NSError *error) {
+ NSLog(@"Ad error: %@",error);
+ } onClickHandler:^{
+ NSLog(@"Ad clicked");
+ } onCloseHandler:^{
+ NSLog(@"Ad closed");
+ }];
+ 
+ @param onAdLoadedHandler: A block that will be executed once the ad is loaded, can be nil.
+ 
+ @param onAdFailedHandler: A block that will be executed once any error happen, can be nil.
+ 
+ @param onClickHandler: A block that will be executed once the user click on the ad, can be nil.
+ 
+ @param onCloseHandler: A block that will be executed once the user close the ad, can be nil.
+ 
+ */
+- (void) loadVideoWithSuccessHandler:(void(^)(RevMobFullscreen* fs)) onAdLoadedHandler
+             andLoadFailHandler:(void(^)(RevMobFullscreen* fs, NSError *error)) onAdFailedHandler
+                 onClickHandler:(void(^)())onClickHandler
+                 onCloseHandler:(void(^)())onCloseHandler;
+
+
+/**
+ Use this method to load the ad.
+ 
+ 
+ Example of usage:
+ 
+ [rewardedVideo loadRewardedVideoWithSuccessHandler:^(RevMobFullscreen *rewardedVideo) {
+ [rewardedVideo showAd];
+ NSLog(@"Ad loaded");
+ } andLoadFailHandler:^(RevMobFullscreen *rewardedVideo, NSError *error) {
+ NSLog(@"Ad error: %@",error);
+ } onClickHandler:^{
+ NSLog(@"Ad clicked");
+ } onCloseHandler:^{
+ NSLog(@"Ad closed");
+ }];
+ 
+ @param onAdLoadedHandler: A block that will be executed once the ad is loaded, can be nil.
+ 
+ @param onAdFailedHandler: A block that will be executed once any error happen, can be nil.
+ 
+ @param onClickHandler: A block that will be executed once the user click on the ad, can be nil.
+ 
+ @param onCloseHandler: A block that will be executed once the user close the ad, can be nil.
+ 
+ */
+- (void) loadRewardedVideoWithSuccessHandler:(void(^)(RevMobFullscreen* fs)) onAdLoadedHandler
+             andLoadFailHandler:(void(^)(RevMobFullscreen* fs, NSError *error)) onAdFailedHandler
+              onCompleteHandler:(void(^)())onCompleteHandler;
+
+
+
 /**
  Use this method to show the ad.
  */
