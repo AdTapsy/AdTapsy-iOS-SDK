@@ -11,16 +11,17 @@
 #import "ALSdkSettings.h"
 #import "ALAdService.h"
 #import "ALNativeAdService.h"
-#import "ALTargetingData.h"
 #import "ALPostbackService.h"
 #import "ALEventService.h"
 
 #import "ALAnnotations.h"
 #import "ALErrorCodes.h"
+#import "ALMediationProvider.h"
+
+AL_ASSUME_NONNULL_BEGIN
 
 /**
  * This is a base class for the AppLovin iOS SDK.
- *
  */
 @interface ALSdk : NSObject
 
@@ -31,33 +32,45 @@
 /**
  * This SDK's key.
  */
-@property (strong, nonatomic, readonly) NSString * __alnonnull sdkKey;
+@property (strong, nonatomic, readonly) NSString *sdkKey;
 
 /**
  * This SDK's settings.
  */
-@property (strong, nonatomic, readonly) ALSdkSettings * __alnonnull settings;
+@property (strong, nonatomic, readonly) ALSdkSettings *settings;
 
 /**
- * Set Plugin version.
+ * Set plugin version.
  *
  * This is mainly used internally, however if you've written a mediation adaptor or plugin,
- * you can set this. Common examples include things like "Bob's Cocos2D Plugin v1.0".
+ * you can set this. Common examples include things like "Cocos2D Plugin v1.0".
  *
- * @param version Some descriptive string which identifies the plugin.
+ * @param pluginVersion Some descriptive string which identifies the plugin.
  */
-- (void)setPluginVersion:(alnonnull NSString *)version;
+- (void)setPluginVersion:(NSString *)pluginVersion;
+
+/**
+ * Set mediation provider using one of the provided strings in ALMediationProvider.h, or your own if not defined.
+ */
+@property (atomic, copy, alnullable) NSString *mediationProvider;
 
 /**
  * @name SDK Information
  */
 
 /**
- *  Get the current version of the SDK.
+ * Get the current version of the SDK.
  *
- *  @return The current SDK version.
+ * @return The current SDK version.
  */
-+ (alnonnull NSString *)version;
++ (NSString *)version;
+
+/**
+ * Get the current version of the SDK in numeric format.
+ *
+ * @return The current SDK version in numeric format.
+ */
++ (NSUInteger)versionCode;
 
 /**
  * @name SDK Services
@@ -69,7 +82,7 @@
  *
  * @return Ad service. Guaranteed not to be null.
  */
-@property (strong, nonatomic, readonly) ALAdService * __alnonnull adService;
+@property (strong, nonatomic, readonly) ALAdService *adService;
 
 /**
  * Get an instance of AppLovin Native Ad service. This service is
@@ -77,34 +90,30 @@
  *
  * @return Native ad service. Guaranteed not to be null.
  */
-@property (strong, nonatomic, readonly) ALNativeAdService * __alnonnull nativeAdService;
+@property (strong, nonatomic, readonly) ALNativeAdService *nativeAdService;
 
 /**
  * Get an instance of the AppLovin postback service. This service is used to dispatch HTTP GET postbacks to arbitrary URLs.
  *
  * @return Postback service. Guaranteed not to be null.
  */
-@property (strong, nonatomic, readonly) ALPostbackService * __alnonnull postbackService;
+@property (strong, nonatomic, readonly) ALPostbackService *postbackService;
 
 /**
  * Get an instance of the AppLovin event service. This service is used to track post-install user events.
  *
  * @return Event service. Guaranteed not to be null.
  */
-@property (strong, nonatomic, readonly) ALEventService * __alnonnull eventService;
+@property (strong, nonatomic, readonly) ALEventService *eventService;
 
 /**
- * @name Custom User Targeting
- */
-
-/**
- * Get an instance of AppLovin Targeting data. This object contains
- * targeting values that could be provided to AppLovin for better
- * advertisement performance.
+ * Set a string which identifies the current user, which will be passed through to your server via our optional S2S postbacks.
  *
- * @return Current targeting data. Guaranteed not to be null.
+ * If you're using reward validation, you can optionally set a user identifier to be included with
+ * currency validation postbacks. For example, a user name. We'll include this in the postback when we
+ * ping your currency endpoint from our server.
  */
-@property (strong, nonatomic, readonly) ALTargetingData * __alnonnull targetingData;
+@property (copy, nonatomic, alnullable) NSString *userIdentifier;
 
 /**
  * @name SDK Initialization
@@ -121,8 +130,6 @@
  *
  * Please make sure that application's
  * <code>Info.plist</code> includes a property 'AppLovinSdkKey' that is set to provided SDK key.
- *
- * @return An instance of AppLovinSDK
  */
 + (void)initializeSdk;
 
@@ -147,7 +154,7 @@
  *
  * @return An instance of AppLovinSDK
  */
-+ (alnullable ALSdk *)sharedWithKey:(alnonnull NSString *)sdkKey;
++ (alnullable ALSdk *)sharedWithKey:(NSString *)sdkKey;
 
 /**
  * Get an instance of AppLovin SDK.
@@ -157,8 +164,10 @@
  * 
  * @return An instance of AppLovinSDK
  */
-+ (alnullable ALSdk *)sharedWithKey:(alnonnull NSString *)sdkKey settings:(alnonnull ALSdkSettings *)settings;
++ (alnullable ALSdk *)sharedWithKey:(NSString *)sdkKey settings:(ALSdkSettings *)settings;
 
-- (alnullable id) init __attribute__((unavailable("Use [ALSdk shared] instead of alloc-init pattern.")));
+- (id)init __attribute__((unavailable("Use [ALSdk shared] instead of alloc-init pattern.")));
 
 @end
+
+AL_ASSUME_NONNULL_END

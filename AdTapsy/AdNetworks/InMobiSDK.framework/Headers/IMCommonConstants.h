@@ -9,11 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, IMSDKIdType) {
-    kIMSDKIdTypeSession,
-    kIMSDKIdTypeLogin
-};
-
+#define IM_GDPR_CONSENT_AVAILABLE @"gdpr_consent_available"
 
 typedef NS_ENUM(NSInteger, IMSDKLogLevel) {
     kIMSDKLogLevelNone,
@@ -38,36 +34,15 @@ typedef NS_ENUM (NSInteger, IMSDKEducation) {
     kIMSDKEducationPostGraduateOrAbove
 };
 
-/**
- * User Ethnicity
- */
-typedef NS_ENUM (NSInteger, IMSDKEthnicity) {
-    kIMSDKEthnicityHispanic = 1,
-    kIMSDKEthnicityCaucasian,
-    kIMSDKEthnicityAsian,
-    kIMSDKEthnicityAfricanAmerican,
-    kIMSDKEthnicityOther
-};
-
-typedef NS_ENUM(NSInteger, IMSDKHouseholdIncome) {
-    kIMSDKHouseholdIncomeBelow5kUSD = 1,
-    kIMSDKHouseholdIncomeBetweek5kAnd10kUSD,
-    kIMSDKHouseholdIncomeBetween10kAnd15kUSD,
-    kIMSDKHouseholdIncomeBetween15kAnd20kUSD,
-    kIMSDKHouseholdIncomeBetween20kAnd25kUSD,
-    kIMSDKHouseholdIncomeBetween25kAnd50kUSD,
-    kIMSDKHouseholdIncomeBetween50kAnd75kUSD,
-    kIMSDKHouseholdIncomeBetween75kAnd100kUSD,
-    kIMSDKHouseholdIncomeBetween100kAnd150kUSD,
-    kIMSDKHouseholdIncomeAbove150kUSD
-};
 typedef NS_ENUM(NSInteger, IMSDKAgeGroup) {
     kIMSDKAgeGroupBelow18 = 1,
-    kIMSDKAgeGroupBetween18And20,
-    kIMSDKAgeGroupBetween21And24,
-    kIMSDKAgeGroupBetween25And34,
-    kIMSDKAgeGroupBetween35And54,
-    kIMSDKAgeGroupAbove55
+    kIMSDKAgeGroupBetween18And24,
+    kIMSDKAgeGroupBetween25And29,
+    kIMSDKAgeGroupBetween30And34,
+    kIMSDKAgeGroupBetween35And44,
+    kIMSDKAgeGroupBetween45And54,
+    kIMSDKAgeGroupBetween55And65,
+    kIMSDKAgeGroupAbove65
 };
 
 #endif

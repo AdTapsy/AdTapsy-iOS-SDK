@@ -1,4 +1,14 @@
 AdTapsy SDK Changelog
+v1.5
+- Added support for GDPR
+- Updated Chartboost to v7.2.0
+- Updated AdColony to v3.3.4
+- Updated AppLovin to v5.0.1
+- Updated AdMob to v7.31.0
+- Updated InMobi to v7.1.1
+- Updated RevMob to v10.0.0
+- Updated Vungle to v6.2.0
+
 v1.4
 - Updated Chartboost to v6.6.0
 - Updated AdColony to v3.0.6

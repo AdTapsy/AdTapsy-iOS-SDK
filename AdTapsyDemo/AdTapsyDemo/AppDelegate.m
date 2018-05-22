@@ -15,6 +15,11 @@
 {
     // Override point for customization after application launch.
     [AdTapsy setTestMode:YES andTestDevices:@[ @"Simulator", @"5745e0e7d8877fe11232e7f6c591f57d" ]]; // Only AdMob and RevMob, for the rest go to ad network dashboard
+    
+    // GDPR
+    [AdTapsy setUserSubjectToGdpr:YES];
+    [AdTapsy setConsentGrantedGdpr:NO];
+    
     [AdTapsy startSession:@"539777bae4b02eacca4bcb67"]; // Set AdTapsy App ID
     return YES;
 }

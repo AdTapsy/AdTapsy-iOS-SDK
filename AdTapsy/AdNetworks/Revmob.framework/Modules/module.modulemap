@@ -1,0 +1,6 @@
+framework module Revmob {
+  umbrella header "Revmob.h"
+
+  export *
+  module * { export * }
+}

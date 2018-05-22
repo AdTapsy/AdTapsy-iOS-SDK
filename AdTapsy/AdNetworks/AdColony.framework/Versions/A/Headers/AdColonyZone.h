@@ -73,8 +73,10 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion Based on the success parameter, client-side reward implementations should consider incrementing the user's currency balance in this method.
  Server-side reward implementations, however, should consider the success parameter and then contact the game server to determine the current total balance for the virtual currency.
  Note that the associated block of code will be dispatched on the main thread.
+ @param reward Reward callback
  */
 -(void)setReward:(nullable void (^)(BOOL success, NSString *name, int amount))reward;
+
 @end
 
 NS_ASSUME_NONNULL_END

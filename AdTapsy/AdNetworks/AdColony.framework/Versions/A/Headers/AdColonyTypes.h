@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 /**
  Enum representing AdColony ad request error codes
  */
@@ -50,9 +52,6 @@ typedef NS_ENUM(NSUInteger, AdColonyZoneType) {
     
     /** Interstitial zone type */
     AdColonyZoneTypeInterstitial = 0,
-    
-    /** Banner zone type */
-    AdColonyZoneTypeBanner,
     
     /** Native zone type */
     AdColonyZoneTypeNative

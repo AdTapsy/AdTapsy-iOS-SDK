@@ -15,36 +15,33 @@
 #import "ALAdLoadDelegate.h"
 #import "ALAdRewardDelegate.h"
 
+AL_ASSUME_NONNULL_BEGIN
+
 /**
  *  This class is used to show rewarded videos to the user. These differ from regular interstitials in that they allow you to provide you user virtual currency in exchange for watching a video.
  */
-
 @interface ALIncentivizedInterstitialAd : NSObject
 
-/**
- * @name Ad Delegates
- */
+#pragma mark - Ad Delegates
 
 /**
  *  An object conforming to the ALAdDisplayDelegate protocol, which, if set, will be notified of ad show/hide events.
  */
-@property (strong, nonatomic) id <ALAdDisplayDelegate> __alnullable adDisplayDelegate;
+@property (strong, nonatomic, alnullable) id <ALAdDisplayDelegate> adDisplayDelegate;
 
 /**
  *  An object conforming to the ALAdVideoPlaybackDelegate protocol, which, if set, will be notified of video start/stop events.
  */
-@property (strong, nonatomic) id <ALAdVideoPlaybackDelegate> __alnullable adVideoPlaybackDelegate;
+@property (strong, nonatomic, alnullable) id <ALAdVideoPlaybackDelegate> adVideoPlaybackDelegate;
 
-/**
- * @name Integration, Class Methods
- */
+#pragma mark - Integration, Class Methods
 
 /**
  * Get a reference to the shared instance of ALIncentivizedInterstitialAd.
  *
  * This wraps the [ALSdk shared] call, and will only work if you hve set your SDK key in Info.plist.
 */
-+ (alnonnull ALIncentivizedInterstitialAd *)shared;
++ (ALIncentivizedInterstitialAd *)shared;
 
 /**
  * Pre-load an incentivized interstitial, and notify your provided Ad Load Delegate.
@@ -90,30 +87,6 @@
 + (void)showAndNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
 
 /**
- * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
- *
- * You must call preloadAndNotify before calling showOver.
- *
- * @param placement Placement to show the app over
- */
-+ (void)showOverPlacement:(alnullable NSString *)placement;
-
-/**
- * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
- *
- * You must call preloadAndNotify before calling showOver.
- *
- * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers the the video view is legitimate,
- * as we will confirm whether the specific ad was actually served - then we will ping your server with a url for you to update
- * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
- * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.
- *
- * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
- * @param placement Placement to show the app over
- */
-+ (void)showOverPlacement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
-
-/**
  * Show an incentivized interstitial, using the most recently pre-loaded ad.
  *
  * You must call preloadAndNotify before calling showOver.
@@ -127,38 +100,42 @@
  * @param window The UIWindow over which the rewarded video should be displayed.
  *
  */
-+ (void)showOver:(alnonnull UIWindow *)window andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
++ (void)showOver:(UIWindow *)window andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
 
-/**
- * Show an incentivized interstitial, using the most recently pre-loaded ad.
- *
- * You must call preloadAndNotify before calling showOver.
- *
- * Using the ALAdRewardDelegate, you will be able to verify with AppLovin servers the the video view is legitimate,
- * as we will confirm whether the specific ad was actually served - then we will ping your server with a url for you to update
- * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
- * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.
- *
- * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
- * @param window The UIWindow over which the rewarded video should be displayed.
- * @param placement Placement to show the app over
- */
-+ (void)showOver:(alnonnull UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
-
-/**
- * @name Integration, Instance Methods
- */
+#pragma mark - Integration, Instance Methods
 
 /**
  * Initialize an incentivized interstitial with a specific custom SDK.
  *
  * This is necessary if you use <code>[ALSdk sharedWithKey: ...]</code>.
  *
- * @param anSdk An SDK instance to use.
+ * @param sdk An SDK instance to use.
  */
-- (alnonnull instancetype)initWithSdk:(alnonnull ALSdk *)anSdk;
+- (instancetype)initWithSdk:(ALSdk *)sdk;
 
-- (alnonnull instancetype)initIncentivizedInterstitialWithSdk:(alnonnull ALSdk *)anSdk __deprecated_msg("Use initWithSdk instead.");
+#pragma mark - Integration, zones
+
+/**
+ * Initialize an incentivized interstitial with a zone.
+ *
+ * @param zoneIdentifier The identifier of the zone for which to load ads for.
+ */
+- (instancetype)initWithZoneIdentifier:(NSString *)zoneIdentifier;
+
+/**
+ * Initialize an incentivized interstitial with a zone and a specific custom SDK.
+ *
+ * This is necessary if you use <code>[ALSdk sharedWithKey: ...]</code>.
+ *
+ * @param zoneIdentifier The identifier of the zone for which to load ads for.
+ * @param sdk            An SDK instance to use.
+ */
+- (instancetype)initWithZoneIdentifier:(NSString *)zoneIdentifier sdk:(ALSdk *)sdk;
+
+/**
+ *  The zone identifier this incentivized ad was initialized with and is loading ads for, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
 
 /**
  * Pre-load an incentivized interstitial, and notify your provided Ad Load Delegate.
@@ -215,7 +192,7 @@
  * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
  * @param window The UIWindow over which the rewarded video should be displayed.
  */
-- (void)showOver:(alnonnull UIWindow *)window andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
+- (void)showOver:(UIWindow *)window andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
 
 /**
  * Show an incentivized interstitial, using the most recently pre-loaded ad.
@@ -227,11 +204,11 @@
  * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
  * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.
  *
+ * @param window           The UIWindow over which the rewarded video should be displayed.
+ * @param ad               The ad to render into this incentivized ad.
  * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
- * @param window The UIWindow over which the rewarded video should be displayed.
- * @param placement A placement current incentivized ad is shown over
  */
-- (void)showOver:(alnonnull UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
+- (void)showOver:(UIWindow *)window renderAd:(ALAd *)ad andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate;
 
 /**
  * Dismiss an incentivized interstitial prematurely, before video playback has completed.
@@ -240,9 +217,7 @@
  */
 - (void)dismiss;
 
-/**
- * @name Custom User Identifiers
- */
+#pragma mark - Custom User Identifiers
 
 /**
  * Set a string which identifies the current user, which will be passed through to your server via our optional S2S postbacks.
@@ -262,6 +237,21 @@
  */
 + (alnullable NSString *)userIdentifier;
 
-- (alnullable id) init __attribute__((unavailable("Use [ALIncentivizedInterstitialAd shared] or initWithSdk: instead.")));
+
+- (instancetype)init __attribute__((unavailable("Use initWithSdk:, initWithZoneIdentifier:, or [ALIncentivizedInterstitialAd shared] instead.")));
 
 @end
+
+@interface ALIncentivizedInterstitialAd(ALDeprecated)
++ (void)showOverPlacement:(alnullable NSString *)placement
+__deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
++ (void)showOverPlacement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate
+__deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
++ (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate
+__deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+- (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id <ALAdRewardDelegate>)adRewardDelegate
+__deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+- (instancetype)initIncentivizedInterstitialWithSdk:(ALSdk *)sdk __deprecated_msg("Use initWithSdk:, initWithZoneIdentifier: or [ALIncentivizedInterstitialAd shared] instead.");
+@end
+
+AL_ASSUME_NONNULL_END

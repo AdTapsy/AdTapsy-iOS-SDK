@@ -184,5 +184,9 @@
 +(void) setRewardedVideoPostPopupEnabled: (BOOL) isEnabled;
 @property (nonatomic, assign) BOOL rewardedVideoPostPopupEnabled;
 
++(BOOL) consentGrantedGdpr;
++(BOOL) userSubjectToGdpr;
++(void) setUserSubjectToGdpr: (BOOL) value;
++(void) setConsentGrantedGdpr: (BOOL) value;
 
 @end

@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		940540E5199B914300BAD9FA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 940540E4199B914300BAD9FA /* logo.png */; };
+		941D70E820B4AAFD00752A01 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E120B4AAFD00752A01 /* GoogleMobileAds.framework */; };
+		941D70E920B4AAFD00752A01 /* Revmob.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E220B4AAFD00752A01 /* Revmob.framework */; };
+		941D70EA20B4AAFD00752A01 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E320B4AAFD00752A01 /* AdColony.framework */; };
+		941D70EB20B4AAFD00752A01 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E420B4AAFD00752A01 /* AppLovinSDK.framework */; };
+		941D70EC20B4AAFD00752A01 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E520B4AAFD00752A01 /* InMobiSDK.framework */; };
+		941D70ED20B4AAFD00752A01 /* CHAMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E620B4AAFD00752A01 /* CHAMoatMobileAppKit.framework */; };
+		941D70EE20B4AAFD00752A01 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70E720B4AAFD00752A01 /* Chartboost.framework */; };
+		941D70F020B4AB1200752A01 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70EF20B4AB1200752A01 /* StoreKit.framework */; };
+		941D70F220B4AB1700752A01 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941D70F120B4AB1700752A01 /* WatchConnectivity.framework */; };
 		9425C848199BC41D000053AD /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425C838199BC41D000053AD /* Icon-40.png */; };
 		9425C849199BC41D000053AD /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425C839199BC41D000053AD /* Icon-40@2x.png */; };
 		9425C84A199BC41D000053AD /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425C83A199BC41D000053AD /* Icon-60.png */; };
@@ -25,13 +34,7 @@
 		9425C856199BC41D000053AD /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425C846199BC41D000053AD /* iTunesArtwork.png */; };
 		9425C857199BC41D000053AD /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9425C847199BC41D000053AD /* iTunesArtwork@2x.png */; };
 		94926E001CF65449002EEA93 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94926DFF1CF65449002EEA93 /* CoreBluetooth.framework */; };
-		94AB1C8C1A97605600F6A8CB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AB1C8B1A97605600F6A8CB /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		94BECF3F1E0CBA3C0066B1A4 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF341E0CBA3C0066B1A4 /* AdColony.framework */; };
-		94BECF401E0CBA3C0066B1A4 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF351E0CBA3C0066B1A4 /* AppLovinSDK.framework */; };
-		94BECF411E0CBA3C0066B1A4 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF361E0CBA3C0066B1A4 /* Chartboost.framework */; };
-		94BECF421E0CBA3C0066B1A4 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF371E0CBA3C0066B1A4 /* GoogleMobileAds.framework */; };
-		94BECF431E0CBA3C0066B1A4 /* InMobiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF381E0CBA3C0066B1A4 /* InMobiSDK.framework */; };
-		94BECF441E0CBA3C0066B1A4 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF391E0CBA3C0066B1A4 /* RevMobAds.framework */; };
+		94AB1C8C1A97605600F6A8CB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AB1C8B1A97605600F6A8CB /* WebKit.framework */; };
 		94BECF451E0CBA3C0066B1A4 /* AdNetworks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 94BECF3A1E0CBA3C0066B1A4 /* AdNetworks.txt */; };
 		94BECF461E0CBA3C0066B1A4 /* Changelog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 94BECF3C1E0CBA3C0066B1A4 /* Changelog.txt */; };
 		94BECF471E0CBA3C0066B1A4 /* libAdTapsy_device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BECF3D1E0CBA3C0066B1A4 /* libAdTapsy_device.a */; };
@@ -85,6 +88,15 @@
 
 /* Begin PBXFileReference section */
 		940540E4199B914300BAD9FA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		941D70E120B4AAFD00752A01 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		941D70E220B4AAFD00752A01 /* Revmob.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Revmob.framework; sourceTree = "<group>"; };
+		941D70E320B4AAFD00752A01 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		941D70E420B4AAFD00752A01 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
+		941D70E520B4AAFD00752A01 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
+		941D70E620B4AAFD00752A01 /* CHAMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CHAMoatMobileAppKit.framework; sourceTree = "<group>"; };
+		941D70E720B4AAFD00752A01 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		941D70EF20B4AB1200752A01 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		941D70F120B4AB1700752A01 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		9425C838199BC41D000053AD /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		9425C839199BC41D000053AD /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
 		9425C83A199BC41D000053AD /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
@@ -103,12 +115,6 @@
 		9425C847199BC41D000053AD /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		94926DFF1CF65449002EEA93 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		94AB1C8B1A97605600F6A8CB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		94BECF341E0CBA3C0066B1A4 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
-		94BECF351E0CBA3C0066B1A4 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		94BECF361E0CBA3C0066B1A4 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
-		94BECF371E0CBA3C0066B1A4 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		94BECF381E0CBA3C0066B1A4 /* InMobiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InMobiSDK.framework; sourceTree = "<group>"; };
-		94BECF391E0CBA3C0066B1A4 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		94BECF3A1E0CBA3C0066B1A4 /* AdNetworks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdNetworks.txt; sourceTree = "<group>"; };
 		94BECF3B1E0CBA3C0066B1A4 /* AdTapsy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdTapsy.h; sourceTree = "<group>"; };
 		94BECF3C1E0CBA3C0066B1A4 /* Changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.txt; sourceTree = "<group>"; };
@@ -163,38 +169,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941D70F220B4AB1700752A01 /* WatchConnectivity.framework in Frameworks */,
+				941D70F020B4AB1200752A01 /* StoreKit.framework in Frameworks */,
+				94AB1C8C1A97605600F6A8CB /* WebKit.framework in Frameworks */,
 				94BECF4A1E0CBD6E0066B1A4 /* CoreMotion.framework in Frameworks */,
 				94E934331D5F50BB0061A4E6 /* libsqlite3.0.tbd in Frameworks */,
 				94E934311D5F50B60061A4E6 /* libz.tbd in Frameworks */,
+				941D70EE20B4AAFD00752A01 /* Chartboost.framework in Frameworks */,
 				94926E001CF65449002EEA93 /* CoreBluetooth.framework in Frameworks */,
-				94AB1C8C1A97605600F6A8CB /* WebKit.framework in Frameworks */,
 				94C25AEC1947ADF100E48B73 /* AdSupport.framework in Frameworks */,
+				941D70EB20B4AAFD00752A01 /* AppLovinSDK.framework in Frameworks */,
 				94C25B081947AE6900E48B73 /* Social.framework in Frameworks */,
-				94BECF421E0CBA3C0066B1A4 /* GoogleMobileAds.framework in Frameworks */,
 				94C25B0E1947B34C00E48B73 /* EventKit.framework in Frameworks */,
 				94C25B101947B35B00E48B73 /* CoreData.framework in Frameworks */,
 				94C25B121947B36700E48B73 /* EventKitUI.framework in Frameworks */,
-				94BECF431E0CBA3C0066B1A4 /* InMobiSDK.framework in Frameworks */,
 				94C25B041947AE5B00E48B73 /* CoreMedia.framework in Frameworks */,
 				94C25B021947AE5200E48B73 /* AudioToolbox.framework in Frameworks */,
 				94C25B001947AE4A00E48B73 /* AVFoundation.framework in Frameworks */,
 				94C25AFE1947AE4400E48B73 /* CFNetwork.framework in Frameworks */,
+				941D70EC20B4AAFD00752A01 /* InMobiSDK.framework in Frameworks */,
 				94C25AFC1947AE3D00E48B73 /* CoreAudio.framework in Frameworks */,
 				94C25AFA1947AE3500E48B73 /* CoreLocation.framework in Frameworks */,
 				94C25AF81947AE2D00E48B73 /* CoreTelephony.framework in Frameworks */,
-				94BECF401E0CBA3C0066B1A4 /* AppLovinSDK.framework in Frameworks */,
-				94BECF441E0CBA3C0066B1A4 /* RevMobAds.framework in Frameworks */,
 				94C25AF61947AE2600E48B73 /* MediaPlayer.framework in Frameworks */,
 				94C25AF41947AE1F00E48B73 /* MessageUI.framework in Frameworks */,
+				941D70EA20B4AAFD00752A01 /* AdColony.framework in Frameworks */,
 				94C25AF21947AE1900E48B73 /* QuartzCore.framework in Frameworks */,
 				94BECF481E0CBA3C0066B1A4 /* libAdTapsy_simulator.a in Frameworks */,
-				94BECF411E0CBA3C0066B1A4 /* Chartboost.framework in Frameworks */,
 				94C25AF01947AE1200E48B73 /* Security.framework in Frameworks */,
 				94C25AEE1947AE0900E48B73 /* SystemConfiguration.framework in Frameworks */,
 				94C25A5E1947AC9300E48B73 /* CoreGraphics.framework in Frameworks */,
-				94BECF3F1E0CBA3C0066B1A4 /* AdColony.framework in Frameworks */,
 				94C25A601947AC9300E48B73 /* UIKit.framework in Frameworks */,
+				941D70E920B4AAFD00752A01 /* Revmob.framework in Frameworks */,
 				94BECF471E0CBA3C0066B1A4 /* libAdTapsy_device.a in Frameworks */,
+				941D70E820B4AAFD00752A01 /* GoogleMobileAds.framework in Frameworks */,
+				941D70ED20B4AAFD00752A01 /* CHAMoatMobileAppKit.framework in Frameworks */,
 				94C25A5C1947AC9300E48B73 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +221,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941D70E020B4AAFD00752A01 /* AdNetworks */ = {
+			isa = PBXGroup;
+			children = (
+				941D70E120B4AAFD00752A01 /* GoogleMobileAds.framework */,
+				941D70E220B4AAFD00752A01 /* Revmob.framework */,
+				941D70E320B4AAFD00752A01 /* AdColony.framework */,
+				941D70E420B4AAFD00752A01 /* AppLovinSDK.framework */,
+				941D70E520B4AAFD00752A01 /* InMobiSDK.framework */,
+				941D70E620B4AAFD00752A01 /* CHAMoatMobileAppKit.framework */,
+				941D70E720B4AAFD00752A01 /* Chartboost.framework */,
+			);
+			path = AdNetworks;
+			sourceTree = "<group>";
+		};
 		9425C837199BC41D000053AD /* ios7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +261,7 @@
 		94BECF321E0CBA3C0066B1A4 /* AdTapsy */ = {
 			isa = PBXGroup;
 			children = (
-				94BECF331E0CBA3C0066B1A4 /* AdNetworks */,
+				941D70E020B4AAFD00752A01 /* AdNetworks */,
 				94BECF3A1E0CBA3C0066B1A4 /* AdNetworks.txt */,
 				94BECF3B1E0CBA3C0066B1A4 /* AdTapsy.h */,
 				94BECF3C1E0CBA3C0066B1A4 /* Changelog.txt */,
@@ -247,19 +270,6 @@
 			);
 			name = AdTapsy;
 			path = ../AdTapsy;
-			sourceTree = "<group>";
-		};
-		94BECF331E0CBA3C0066B1A4 /* AdNetworks */ = {
-			isa = PBXGroup;
-			children = (
-				94BECF341E0CBA3C0066B1A4 /* AdColony.framework */,
-				94BECF351E0CBA3C0066B1A4 /* AppLovinSDK.framework */,
-				94BECF361E0CBA3C0066B1A4 /* Chartboost.framework */,
-				94BECF371E0CBA3C0066B1A4 /* GoogleMobileAds.framework */,
-				94BECF381E0CBA3C0066B1A4 /* InMobiSDK.framework */,
-				94BECF391E0CBA3C0066B1A4 /* RevMobAds.framework */,
-			);
-			path = AdNetworks;
 			sourceTree = "<group>";
 		};
 		94C25A4F1947AC9300E48B73 = {
@@ -285,6 +295,8 @@
 		94C25A5A1947AC9300E48B73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				941D70F120B4AB1700752A01 /* WatchConnectivity.framework */,
+				941D70EF20B4AB1200752A01 /* StoreKit.framework */,
 				94BECF491E0CBD6E0066B1A4 /* CoreMotion.framework */,
 				94E934321D5F50BB0061A4E6 /* libsqlite3.0.tbd */,
 				94E934301D5F50B60061A4E6 /* libz.tbd */,

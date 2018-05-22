@@ -5,6 +5,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ AdColony interstitial ad object
+ */
 @interface AdColonyInterstitial : NSObject
 
 /** @name Properties */
@@ -44,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setOpen:(nullable void (^)(void))open;
 
 /**
- @abstract Sets the block of code to be executed when the interstitial is removed from the view hierarchy.
+ @abstract Sets the block of code to be executed when the interstitial is removed from the view hierarchy. It's recommended to request a new ad within this callback.
  @discussion Note that the associated code block will be dispatched on the main thread.
  @param close The block of code to be executed.
  */
@@ -65,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setAudioStop:(nullable void (^)(void))audioStop;
 
 /**
- @abstract Sets the block of code to be executed 5 seconds before an interstitial expires and is no longer valid for playback.
+ @abstract Sets the block of code to be executed when an interstitial expires and is no longer valid for playback. This does not get triggered when the expired flag is set because it has been viewed. It's recommended to request a new ad within this callback.
  @discussion Note that the associated code block will be dispatched on the main thread.
  @param expire The block of code to be executed.
  */
@@ -101,13 +104,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @abstract Triggers a fullscreen ad experience.
  @param viewController The view controller on which the interstitial will display itself.
- @return Whether the ad was able to start playback.
+ @return Whether the SDK was ready to begin playback.
  */
 - (BOOL)showWithPresentingViewController:(UIViewController *)viewController;
 
 /**
  @abstract Cancels the interstitial and returns control back to the application.
- @discussion Call this method to cancel the interstitial. 
+ @discussion Call this method to cancel the interstitial.
  Note that canceling interstitials before they finish will diminish publisher revenue.
  */
 - (void)cancel;
