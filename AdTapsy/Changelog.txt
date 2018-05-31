@@ -1,4 +1,7 @@
 AdTapsy SDK Changelog
+v1.6
+- Minor bug fixes
+
 v1.5
 - Added support for GDPR
 - Updated Chartboost to v7.2.0
